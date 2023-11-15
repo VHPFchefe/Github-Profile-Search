@@ -26,6 +26,10 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGz-BD-sgG">
                                 <rect key="frame" x="121" y="380" width="78" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="biQ-uE-9h6"/>
+                                    <constraint firstAttribute="height" constant="34.5" id="s0q-gj-Mcw"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Search"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search"/>
@@ -39,26 +43,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="2iO-fa-TrH">
+                                <rect key="frame" x="40" y="92" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nGz-BD-sgG" firstAttribute="top" secondItem="hOO-KX-694" secondAttribute="bottom" constant="35" id="A5M-JA-KyD"/>
+                            <constraint firstItem="nGz-BD-sgG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="6DY-pG-8cd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hwN-fR-CLd" secondAttribute="trailing" constant="47" id="AkG-zQ-lP5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nGz-BD-sgG" secondAttribute="trailing" constant="121" id="Ct4-mj-drd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hOO-KX-694" secondAttribute="trailing" constant="32" id="FRL-s8-ImK"/>
-                            <constraint firstAttribute="trailing" secondItem="nGz-BD-sgG" secondAttribute="trailing" constant="121" id="HUS-R0-BiI"/>
+                            <constraint firstItem="nGz-BD-sgG" firstAttribute="top" secondItem="hOO-KX-694" secondAttribute="bottom" constant="35" id="Fqr-be-iYH"/>
                             <constraint firstItem="hOO-KX-694" firstAttribute="top" secondItem="hwN-fR-CLd" secondAttribute="bottom" constant="39" id="O2t-nb-3Zc"/>
+                            <constraint firstItem="2iO-fa-TrH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="QNP-7P-0Gp"/>
                             <constraint firstItem="hOO-KX-694" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="XrI-wp-1RW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2iO-fa-TrH" secondAttribute="trailing" constant="40" id="Zgd-s2-GxH"/>
+                            <constraint firstItem="hwN-fR-CLd" firstAttribute="top" secondItem="2iO-fa-TrH" secondAttribute="bottom" constant="31" id="hD3-hw-ul3"/>
                             <constraint firstItem="hwN-fR-CLd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="hh3-j5-ZGT"/>
                             <constraint firstItem="hOO-KX-694" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="267" id="ot5-ZX-log"/>
-                            <constraint firstItem="nGz-BD-sgG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="121" id="vGq-KU-hid"/>
+                            <constraint firstItem="2iO-fa-TrH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="s1X-cM-dOz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GitHub Viwer" customizationIdentifier="GitHub Viwer" id="m6R-wQ-BNV"/>
                     <connections>
                         <outlet property="searchButton" destination="nGz-BD-sgG" id="qjM-Zy-Lz3"/>
                         <outlet property="userNameTextView" destination="hOO-KX-694" id="vYU-4L-IoT"/>
-                        <segue destination="8oH-OA-BFw" kind="show" id="ip9-rF-ed7"/>
+                        <segue destination="8oH-OA-BFw" kind="show" identifier="segueResults" id="ip9-rF-ed7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,22 +84,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4L-sj-3j4">
-                                <rect key="frame" x="40" y="68" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="G5W-pk-uAL">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LCb-xx-vKw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G5W-pk-uAL" firstAttribute="trailing" secondItem="LCb-xx-vKw" secondAttribute="trailing" id="BeL-80-u7k"/>
+                            <constraint firstItem="G5W-pk-uAL" firstAttribute="top" secondItem="IjC-Yw-fEa" secondAttribute="top" constant="44" id="MEA-Y9-hhF"/>
+                            <constraint firstItem="G5W-pk-uAL" firstAttribute="bottom" secondItem="LCb-xx-vKw" secondAttribute="bottom" id="kWI-uj-uZI"/>
+                            <constraint firstItem="G5W-pk-uAL" firstAttribute="leading" secondItem="LCb-xx-vKw" secondAttribute="leading" id="nPG-dt-b0k"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vEx-dU-xPi"/>
+                    <navigationItem key="navigationItem" id="vEx-dU-xPi">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="SRz-zS-gNt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLE-gx-UlR">
+                                <rect key="frame" x="253.5" y="8" width="50.5" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="circle.grid.2x2.fill" catalog="system"/>
+                            </button>
+                            <connections>
+                                <action selector="openMenuFilterAndOrder:" destination="8oH-OA-BFw" id="Fkx-VT-Iye"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="userProfileImage" destination="j4L-sj-3j4" id="vSR-Dr-zaa"/>
+                        <outlet property="tableView" destination="G5W-pk-uAL" id="kLK-kF-n1E"/>
+                        <segue destination="Xmh-ck-4r3" kind="presentation" identifier="segueOptions" id="NU6-DB-kx8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhd-6l-TTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2709" y="3"/>
+            <point key="canvasLocation" x="2707.5" y="2.112676056338028"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="XN3-Gb-ypy">
+            <objects>
+                <viewController id="NYb-xS-Cew" customClass="OptionsViewController" customModule="IOS_class_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nyq-xu-73E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sde-NT-bcH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dLO-jR-Xu2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DI7-IQ-252" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4539.375" y="1.056338028169014"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PCA-fE-Mb4">
@@ -108,8 +154,28 @@
             </objects>
             <point key="canvasLocation" x="1006.875" y="4.225352112676056"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TyP-s5-0Dq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xmh-ck-4r3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QG8-nU-v8k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NYb-xS-Cew" kind="relationship" relationship="rootViewController" id="oBu-7Z-Zrz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGa-Xg-ZPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3541.875" y="1.056338028169014"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="circle.grid.2x2.fill" catalog="system" width="128" height="111"/>
+        <image name="github" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

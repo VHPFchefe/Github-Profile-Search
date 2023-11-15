@@ -7,8 +7,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -20,17 +18,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchUser(_ sender: Any) {
-        if let userName = userNameTextView?.text, !userName.isEmpty {
-            print("There is userName")
-            print(userName)
+        if let login = userNameTextView?.text, !login.isEmpty {
+            //print("There is userName")
+            //print(userName)
             let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
-            storyboard.userName = userName
+            storyboard.login = login
             
             self.navigationController?.pushViewController(storyboard, animated: true)
             
         } else {
             // add a message for the user
         }
-        
     }
 }

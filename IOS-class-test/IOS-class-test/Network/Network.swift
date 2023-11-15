@@ -1,24 +1,15 @@
 import Foundation
+import UIKit
 
-func loadReposData() async -> [Repository]{
-    do {
-        return try await getRepos()
-        
-       } catch GitHubError.invalidData {
-           print("Invalid Data!")
-       } catch GitHubError.invalidResponse {
-           print("Invalid Response!")
-       } catch GitHubError.invalidURL {
-           print("Invalid URL!")
-       } catch {
-           print("Unexpected Error!")
-       }
+func getUserImage(url : String) async throws -> UIImage {
+    guard let urlImage = URL(string: url) else { throw GitHubError.invalidURL }
+    let data = try Data(contentsOf: urlImage)
+    guard let image = UIImage(data: data) else { throw GitHubError.invalidData}
+    return image
 }
 
-func getRepos(userName: String) async throws -> [Repository] {
-    let endPoint = "https://api.github.com/users/\(userName)/repos"
-    //"https://api.github.com/users/VHPFchefe/repos"
-    
+func getUser(login: String) async throws -> User {
+    let endPoint = "https://api.github.com/users/\(login)"
     guard let url = URL(string: endPoint) else {
         throw GitHubError.invalidURL
     }
@@ -32,13 +23,26 @@ func getRepos(userName: String) async throws -> [Repository] {
     do {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        // Mark
-        
-        // I dont know hot to use this guys, but, i will need that
-        
-        //decoder.dataDecodingStrategy =
-        //decoder.dateDecodingStrategy =
-        
+        return try decoder.decode(User.self, from: data)
+    } catch {
+        throw GitHubError.invalidData
+    }
+}
+
+func getRepos(endPointRepos : String) async throws -> [Repository] {
+    guard let url = URL(string: endPointRepos) else {
+        throw GitHubError.invalidURL
+    }
+    
+    let (data,response) = try await URLSession.shared.data(from: url)
+    
+    guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+        throw GitHubError.invalidResponse
+    }
+    
+    do {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return try decoder.decode([Repository].self, from: data)
     } catch {
         throw GitHubError.invalidData

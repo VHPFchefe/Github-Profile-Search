@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellView" rowHeight="186" id="FiA-mG-iQy" customClass="CellView" customModule="IOS_class_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="186"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FiA-mG-iQy" id="GJk-9L-QrH">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="186"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6H-cw-mIg">
+                        <rect key="frame" x="5" y="5" width="340" height="176"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text.book.closed.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PGn-y5-WwG">
+                                <rect key="frame" x="8" y="11" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34.329999999999998" id="Ft1-bB-jw0"/>
+                                    <constraint firstAttribute="width" constant="34" id="bUI-qQ-y4v"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Repositório" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acp-Lc-wV9">
+                                <rect key="frame" x="51" y="9" width="203" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="TfO-cP-hqa"/>
+                                    <constraint firstAttribute="width" constant="203" id="ZJ1-kl-yfh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" id="qaK-hn-Kvh">
+                                <rect key="frame" x="251" y="14.666666666666515" width="40" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuningfork" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OXa-aL-cUZ">
+                                <rect key="frame" x="292" y="15.666666666666659" width="40" height="24.000000000000014"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="k6a-s9-iMc"/>
+                                    <constraint firstAttribute="height" constant="24.670000000000002" id="pXN-a2-2Y6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i08-qa-Mr5">
+                                <rect key="frame" x="251" y="34" width="40" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-Fc-SbX">
+                                <rect key="frame" x="40" y="53.000000000000007" width="200" height="25.333333333333336"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25.329999999999998" id="Lgd-pk-4Rc"/>
+                                    <constraint firstAttribute="width" constant="200" id="hcs-IX-EDP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7l-V9-rcc">
+                                <rect key="frame" x="292" y="34" width="40" height="25.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Pua-Pb-ghU"/>
+                                    <constraint firstAttribute="height" constant="25.329999999999998" id="YT9-rv-fxd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qzh-7Y-dZ1">
+                                <rect key="frame" x="5" y="54" width="40" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6mT-pl-zCB"/>
+                                    <constraint firstAttribute="height" constant="25.329999999999998" id="SlK-2R-Zmd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1gv-1t-t1d">
+                                <rect key="frame" x="9" y="77" width="321" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="bWT-fX-1ji"/>
+                                    <constraint firstAttribute="width" constant="321" id="ikm-Jn-qUg"/>
+                                </constraints>
+                                <string key="text">Descrição - Lorem ipsun Lorem ipsun Lorem ipsun v Lorem ipsun Lorem ipsun v Lorem ipsun Lorem ipsun Lorem ipsun Lorem ipsun Lorem ipsun</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qaK-hn-Kvh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PGn-y5-WwG" secondAttribute="trailing" constant="209" id="2qk-VY-bcH"/>
+                            <constraint firstItem="ugs-Fc-SbX" firstAttribute="leading" secondItem="f6H-cw-mIg" secondAttribute="leading" constant="40" id="5JD-6t-5Ll"/>
+                            <constraint firstAttribute="bottom" secondItem="1gv-1t-t1d" secondAttribute="bottom" constant="10" id="9tq-zv-L0E"/>
+                            <constraint firstItem="ugs-Fc-SbX" firstAttribute="top" secondItem="Acp-Lc-wV9" secondAttribute="bottom" constant="8" symbolic="YES" id="B3X-Kr-cT2"/>
+                            <constraint firstItem="Acp-Lc-wV9" firstAttribute="top" secondItem="f6H-cw-mIg" secondAttribute="top" constant="9" id="C1O-DO-yR6"/>
+                            <constraint firstItem="PGn-y5-WwG" firstAttribute="leading" secondItem="f6H-cw-mIg" secondAttribute="leading" constant="8" id="ClH-Wb-n0v"/>
+                            <constraint firstItem="T7l-V9-rcc" firstAttribute="leading" secondItem="qaK-hn-Kvh" secondAttribute="trailing" constant="1" id="Czr-Lp-tmO"/>
+                            <constraint firstAttribute="trailing" secondItem="1gv-1t-t1d" secondAttribute="trailing" constant="10" id="E7b-wM-Z54"/>
+                            <constraint firstItem="T7l-V9-rcc" firstAttribute="top" secondItem="f6H-cw-mIg" secondAttribute="top" constant="34" id="HgB-gl-kWz"/>
+                            <constraint firstItem="qzh-7Y-dZ1" firstAttribute="top" secondItem="PGn-y5-WwG" secondAttribute="bottom" constant="8" symbolic="YES" id="Hgm-13-YBq"/>
+                            <constraint firstItem="PGn-y5-WwG" firstAttribute="top" secondItem="f6H-cw-mIg" secondAttribute="top" constant="10.67" id="PL4-pv-pYG"/>
+                            <constraint firstItem="i08-qa-Mr5" firstAttribute="leading" secondItem="qaK-hn-Kvh" secondAttribute="leading" id="Qa7-3T-NQg"/>
+                            <constraint firstItem="OXa-aL-cUZ" firstAttribute="leading" secondItem="qaK-hn-Kvh" secondAttribute="trailing" constant="1" id="RLY-P6-UNj"/>
+                            <constraint firstItem="1gv-1t-t1d" firstAttribute="top" secondItem="i08-qa-Mr5" secondAttribute="bottom" constant="17.670000000000002" id="SBx-XU-4sR"/>
+                            <constraint firstItem="qzh-7Y-dZ1" firstAttribute="leading" secondItem="f6H-cw-mIg" secondAttribute="leading" constant="5" id="SlN-Qp-Brm"/>
+                            <constraint firstItem="i08-qa-Mr5" firstAttribute="firstBaseline" secondItem="T7l-V9-rcc" secondAttribute="baseline" id="YCf-mF-q1F"/>
+                            <constraint firstAttribute="trailing" secondItem="OXa-aL-cUZ" secondAttribute="trailing" constant="8" id="Zvf-6M-nei"/>
+                            <constraint firstItem="OXa-aL-cUZ" firstAttribute="top" secondItem="f6H-cw-mIg" secondAttribute="top" constant="15" id="htC-5L-ysk"/>
+                            <constraint firstItem="1gv-1t-t1d" firstAttribute="leading" secondItem="f6H-cw-mIg" secondAttribute="leading" constant="9" id="ipD-C2-qKX"/>
+                            <constraint firstItem="i08-qa-Mr5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qaK-hn-Kvh" secondAttribute="trailing" id="r52-uf-1OG"/>
+                            <constraint firstAttribute="trailing" secondItem="T7l-V9-rcc" secondAttribute="trailing" constant="8" id="uV7-ec-3W5"/>
+                            <constraint firstItem="Acp-Lc-wV9" firstAttribute="leading" secondItem="PGn-y5-WwG" secondAttribute="trailing" constant="9" id="vxU-XB-zXO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="7PD-D3-KsX"/>
+                <constraints>
+                    <constraint firstItem="7PD-D3-KsX" firstAttribute="trailing" secondItem="f6H-cw-mIg" secondAttribute="trailing" constant="5" id="5hf-Nz-4lQ"/>
+                    <constraint firstItem="7PD-D3-KsX" firstAttribute="bottom" secondItem="f6H-cw-mIg" secondAttribute="bottom" constant="5" id="IYt-G9-kCQ"/>
+                    <constraint firstItem="f6H-cw-mIg" firstAttribute="leading" secondItem="7PD-D3-KsX" secondAttribute="leading" constant="5" id="OC0-DN-TDf"/>
+                    <constraint firstItem="f6H-cw-mIg" firstAttribute="top" secondItem="7PD-D3-KsX" secondAttribute="top" constant="5" id="x28-9c-fYE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="circleLanguage" destination="qzh-7Y-dZ1" id="2iX-av-iJP"/>
+                <outlet property="descriptionLabel" destination="1gv-1t-t1d" id="u2Z-jT-Lwo"/>
+                <outlet property="forksCountLabel" destination="T7l-V9-rcc" id="l4N-rW-Xwy"/>
+                <outlet property="languageLabel" destination="ugs-Fc-SbX" id="zSy-qa-LtJ"/>
+                <outlet property="nameLabel" destination="Acp-Lc-wV9" id="kL5-8F-eAn"/>
+                <outlet property="stargazersCountLabel" destination="i08-qa-Mr5" id="vPJ-GM-yVb"/>
+                <outlet property="view" destination="f6H-cw-mIg" id="UyE-VY-FLO"/>
+            </connections>
+            <point key="canvasLocation" x="167.93893129770993" y="-401.40845070422534"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="text.book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="tuningfork" catalog="system" width="128" height="118"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
