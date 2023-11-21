@@ -22,8 +22,11 @@
 		E69B715A2B0567B500E4CEE7 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69B71592B0567B500E4CEE7 /* OptionsViewController.swift */; };
 		E6B0AC5F2B0150A600F0C6D9 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0AC5E2B0150A600F0C6D9 /* CellView.xib */; };
 		E6B0AC612B0150D100F0C6D9 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0AC602B0150D100F0C6D9 /* CellView.swift */; };
+		E6BBE0FD2B06F4F700005F53 /* ExtensionsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BBE0FC2B06F4F700005F53 /* ExtensionsSwift.swift */; };
 		E6EA8EF22B02284C001E4EEE /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA8EF12B02284C001E4EEE /* HeaderCell.swift */; };
 		E6EA8EF42B022990001E4EEE /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6EA8EF32B022990001E4EEE /* HeaderCell.xib */; };
+		E6FDA2442B06E2EE00CB6DEB /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FDA2432B06E2EE00CB6DEB /* FilterCell.xib */; };
+		E6FDA2462B06E31E00CB6DEB /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDA2452B06E31E00CB6DEB /* FilterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +47,11 @@
 		E69B71592B0567B500E4CEE7 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		E6B0AC5E2B0150A600F0C6D9 /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		E6B0AC602B0150D100F0C6D9 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		E6BBE0FC2B06F4F700005F53 /* ExtensionsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsSwift.swift; sourceTree = "<group>"; };
 		E6EA8EF12B02284C001E4EEE /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		E6EA8EF32B022990001E4EEE /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		E6FDA2432B06E2EE00CB6DEB /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		E6FDA2452B06E31E00CB6DEB /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		E69768F62AFE609A003BDA50 /* IOS-class-test */ = {
 			isa = PBXGroup;
 			children = (
+				E6BBE0FC2B06F4F700005F53 /* ExtensionsSwift.swift */,
 				E644793F2B00110F00525CC8 /* Network */,
 				E64AF50A2AFEBCEB008AD159 /* Model */,
 				E697690B2AFE65DC003BDA50 /* View */,
@@ -121,8 +128,9 @@
 			children = (
 				E69B71582B05678800E4CEE7 /* ViewController */,
 				E6EA8EF02B022822001E4EEE /* HeaderCell */,
-				E6B0AC5D2B013D0700F0C6D9 /* Cell */,
+				E6B0AC5D2B013D0700F0C6D9 /* CellView */,
 				E61C4F2C2B017EC2002EBAA5 /* Colors */,
+				E6FDA23E2B06DD5C00CB6DEB /* FilterCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,21 +138,45 @@
 		E69B71582B05678800E4CEE7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E69769132AFE72B6003BDA50 /* ViewController.swift */,
-				E69769152AFE72CD003BDA50 /* ResultsViewController.swift */,
-				E69B71592B0567B500E4CEE7 /* OptionsViewController.swift */,
+				E6BBE0F92B06EDB900005F53 /* ResultsViewController */,
+				E6BBE0F82B06EDAB00005F53 /* ViewController */,
+				E6BBE0F72B06ED9700005F53 /* OptionsViewController */,
 				E69768FD2AFE609A003BDA50 /* Main.storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		E6B0AC5D2B013D0700F0C6D9 /* Cell */ = {
+		E6B0AC5D2B013D0700F0C6D9 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
 				E6B0AC602B0150D100F0C6D9 /* CellView.swift */,
 				E6B0AC5E2B0150A600F0C6D9 /* CellView.xib */,
 			);
-			path = Cell;
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		E6BBE0F72B06ED9700005F53 /* OptionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E69B71592B0567B500E4CEE7 /* OptionsViewController.swift */,
+			);
+			path = OptionsViewController;
+			sourceTree = "<group>";
+		};
+		E6BBE0F82B06EDAB00005F53 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E69769132AFE72B6003BDA50 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E6BBE0F92B06EDB900005F53 /* ResultsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E69769152AFE72CD003BDA50 /* ResultsViewController.swift */,
+			);
+			path = ResultsViewController;
 			sourceTree = "<group>";
 		};
 		E6EA8EF02B022822001E4EEE /* HeaderCell */ = {
@@ -154,6 +186,15 @@
 				E6EA8EF32B022990001E4EEE /* HeaderCell.xib */,
 			);
 			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		E6FDA23E2B06DD5C00CB6DEB /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				E6FDA2452B06E31E00CB6DEB /* FilterCell.swift */,
+				E6FDA2432B06E2EE00CB6DEB /* FilterCell.xib */,
+			);
+			path = FilterCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FDA2442B06E2EE00CB6DEB /* FilterCell.xib in Resources */,
 				E6B0AC5F2B0150A600F0C6D9 /* CellView.xib in Resources */,
 				E69769042AFE609E003BDA50 /* LaunchScreen.storyboard in Resources */,
 				E69769012AFE609E003BDA50 /* Assets.xcassets in Resources */,
@@ -230,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6BBE0FD2B06F4F700005F53 /* ExtensionsSwift.swift in Sources */,
 				E69769142AFE72B6003BDA50 /* ViewController.swift in Sources */,
+				E6FDA2462B06E31E00CB6DEB /* FilterCell.swift in Sources */,
 				E61C4F2E2B017EFA002EBAA5 /* Colors.swift in Sources */,
 				E64AF50C2AFEBEC4008AD159 /* Repository.swift in Sources */,
 				E69B715A2B0567B500E4CEE7 /* OptionsViewController.swift in Sources */,

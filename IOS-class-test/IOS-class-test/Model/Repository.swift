@@ -1,7 +1,7 @@
 import Foundation
 
 struct Repository : Codable {
-    let name : String?
+    let name : String
     let description : String?
     let language : String?
     let updatedAt : String?

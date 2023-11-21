@@ -21,13 +21,14 @@ class CellView : UITableViewCell {
         circleLanguage.tintColor = getColor(language: repository.language ?? "")
         languageLabel.text = repository.language
         descriptionLabel.text = repository.description
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         forksCountLabel.text = "\(repository.forksCount ?? 0)"
-        stargazersCountLabel.text = "\(repository.stargazersCount ?? 0)"
+        stargazersCountLabel.text = "\(repository.stargazersCount)"
         view.layer.shouldRasterize = true
         view.layer.rasterizationScale = UIScreen.main.scale
         view.layer.cornerRadius = 10
     }
-    
-
-    
 }
+
+
